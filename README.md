@@ -11,6 +11,10 @@ A Windows PowerShell desktop utility with a black-and-purple interface for selec
 - Custom Vortex logo and launcher shortcut
 - Session activity log
 
+## Repository status
+
+**Work in progress:** The main `VortexSessionManager.ps1`, `brand.png`, and `VortexSessionManager.ico` have not yet been uploaded. The launcher will not work until those files are added. The complete prepared project is available separately as the GitHub-ready ZIP from the ChatGPT conversation.
+
 ## Running on Windows
 
 1. Download the repository as a ZIP and extract it to a permanent location.

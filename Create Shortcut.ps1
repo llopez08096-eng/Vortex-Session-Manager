@@ -3,7 +3,20 @@ $dir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $launcher = Join-Path $dir 'Launch.vbs'
 $icon = Join-Path $dir 'VortexSessionManager.ico'
 if (-not (Test-Path $launcher)) { throw 'Launch.vbs is missing.' }
-if (-not (Test-Path $icon)) { throw 'VortexSessionManager.ico is missing.' }
+if (-not (Test-Path $icon)) {
+    $brand = Join-Path $dir 'brand.png'
+    if (-not (Test-Path $brand)) { throw 'brand.png and VortexSessionManager.ico are missing.' }
+    Add-Type -AssemblyName System.Drawing
+    $bmp = New-Object System.Drawing.Bitmap($brand)
+    try {
+        $handle = $bmp.GetHicon()
+        $generated = [System.Drawing.Icon]::FromHandle($handle)
+        try {
+            $stream = [System.IO.File]::Create($icon)
+            try { $generated.Save($stream) } finally { $stream.Dispose() }
+        } finally { $generated.Dispose() }
+    } finally { $bmp.Dispose() }
+}
 $shell = New-Object -ComObject WScript.Shell
 $desktop = [Environment]::GetFolderPath('DesktopDirectory')
 $targets = @(

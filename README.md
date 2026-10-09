@@ -35,4 +35,4 @@ If the launcher exits unexpectedly, run `Debug.bat` to display errors. Windows m
 
 ## Licensing
 
-No open-source license has been selected. All rights are reserved by their respective owners unless a license is added. The Vortex branding is credited to VORTEXCREATIONS and should not be reused without permission.
+No open-source license has been selected. All rights are reserved by their respective owners unless a license is added. The Vortex branding is credited to Kits and should not be reused without permission.

@@ -85,6 +85,16 @@ $form.MaximizeBox=$false
 $form.Font=New-Object Drawing.Font('Segoe UI',10)
 $form.AutoScaleMode='Dpi'
 $ico=Join-Path $PSScriptRoot 'VortexSessionManager.ico'
+$logoForIcon=Join-Path $PSScriptRoot 'brand.png'
+if((-not (Test-Path $ico)) -and (Test-Path $logoForIcon)){
+ try {
+  $bmp=New-Object Drawing.Bitmap($logoForIcon)
+  $hIcon=$bmp.GetHicon()
+  $createdIcon=[Drawing.Icon]::FromHandle($hIcon)
+  $stream=[IO.File]::Create($ico)
+  try {$createdIcon.Save($stream)} finally {$stream.Dispose();$createdIcon.Dispose();$bmp.Dispose()}
+ } catch { [Windows.Forms.MessageBox]::Show(('Icon generation failed: '+$_.Exception.Message)) | Out-Null }
+}
 if(Test-Path $ico){$form.Icon=New-Object Drawing.Icon($ico)}
 $form.ShowIcon=$true
 $form.ShowInTaskbar=$true

@@ -13,7 +13,7 @@ A Windows PowerShell desktop utility with a black-and-purple interface for selec
 
 ## Repository status
 
-**Work in progress:** The main `VortexSessionManager.ps1`, `brand.png`, and `VortexSessionManager.ico` have not yet been uploaded. The launcher will not work until those files are added. The complete prepared project is available separately as the GitHub-ready ZIP from the ChatGPT conversation.
+**Repository status:** `VortexSessionManager.ps1` is now committed. The custom `brand.png` and `VortexSessionManager.ico` image assets still need to be uploaded. Until then, the app can launch without its Vortex images, but the branded shortcut creator will require the ICO file.
 
 ## Running on Windows
 

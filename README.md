@@ -1,6 +1,6 @@
 # Vortex Session Manager
 
-A Windows PowerShell desktop utility with a black-and-purple interface for selecting an application window and running an interval-based jump action.
+A Windows PowerShell desktop utility.
 
 ## Features
 
